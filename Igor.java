@@ -7,6 +7,22 @@ public class Igor extends Robot {
 
     // Função principal do robô
     public void run() {
+<<<<<<< HEAD
+=======
+	    // Ir para o centro da arena no inicio
+		double largura = getBattleFieldWidth();
+		double altura = getBattleFieldHeight();
+		
+        double centroX = largura / 2;
+		double centroY = altura / 2;
+		
+        double dx = centroX - getX();
+		double dy = centroY - getY();
+		double angulo = Math.toDegrees(Math.atan2(dx, dy));
+		turnRight(normalRelativeAngleDegrees(angulo - getHeading()));
+		ahead(Math.hypot(dx, dy));
+		
+>>>>>>> 8c84579 (Initial commit)
         // Cores opcionais
         // setColors(Color.red, Color.blue, Color.green); // corpo, canhão, radar
 
@@ -29,9 +45,15 @@ public class Igor extends Robot {
         double distance = e.getDistance();
         double firePower = 1;
         if (distance < 200) {
+<<<<<<< HEAD
             firePower = 3;
         } else if (distance < 500) {
             firePower = 2;
+=======
+            firePower = 4;
+        } else if (distance < 500) {
+            firePower = 3;
+>>>>>>> 8c84579 (Initial commit)
         }
 
         fire(firePower);
